@@ -1,4 +1,4 @@
-package reactive.step1;
+package reactive.step2;
 
 import java.util.concurrent.Flow.Subscriber;
 import java.util.concurrent.Flow.Subscription;

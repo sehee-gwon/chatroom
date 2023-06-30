@@ -1,4 +1,4 @@
-package reactive.step2;
+package reactive.step3;
 
 import reactor.core.publisher.Flux;
 
