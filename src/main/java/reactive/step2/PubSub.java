@@ -12,6 +12,8 @@ import java.util.stream.Stream;
 
 @Slf4j
 public class PubSub {
+    // pub -> reducePub -> subscribe
+
     public static void main(String[] args) {
         Publisher<Integer> pub = iterPub(Stream.iterate(1, a -> a + 1).limit(10).collect(Collectors.toList()));
         // Publisher<String> mapPub = mapPub(pub, s -> "[" + s + "]");
