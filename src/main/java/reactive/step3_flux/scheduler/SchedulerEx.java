@@ -1,4 +1,4 @@
-package reactive.step3.scheduler;
+package reactive.step3_flux.scheduler;
 
 import lombok.extern.slf4j.Slf4j;
 import org.reactivestreams.Publisher;

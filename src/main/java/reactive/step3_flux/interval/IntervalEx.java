@@ -1,4 +1,4 @@
-package reactive.step3.interval;
+package reactive.step3_flux.interval;
 
 import lombok.extern.slf4j.Slf4j;
 import org.reactivestreams.Publisher;

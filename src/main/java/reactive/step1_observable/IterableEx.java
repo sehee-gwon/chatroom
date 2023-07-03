@@ -1,4 +1,4 @@
-package reactive.step1;
+package reactive.step1_observable;
 
 import java.util.Iterator;
 

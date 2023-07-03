@@ -1,4 +1,4 @@
-package reactive.step2;
+package reactive.step2_pubsub;
 
 import lombok.extern.slf4j.Slf4j;
 

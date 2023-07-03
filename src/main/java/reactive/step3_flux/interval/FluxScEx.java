@@ -1,8 +1,7 @@
-package reactive.step3.interval;
+package reactive.step3_flux.interval;
 
 import lombok.extern.slf4j.Slf4j;
 import reactor.core.publisher.Flux;
-import reactor.core.scheduler.Schedulers;
 
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
