@@ -47,19 +47,25 @@ public class MyController {
         DeferredResult<String> dr = new DeferredResult<>();
 
         // 1. from -> f1 addCallback
-        // 2. andApply -> next 에 f2 completion 객체 연결
-        // 3. andAccept -> next 에 f3 completion 객체 연결
-        Completion
+        // 2. andApply -> f2 apply completion 객체 연결
+        // 3. andAccept -> f3 apply completion 객체 연결
+        // 4. andError -> error completion 객체 연결
+        // 5. andAccept -> accept completion 객체 연결
+        Completion  // 객체 체인
                 .from(rt.getForEntity(URL1, String.class, "hello" + idx))
                 .andApply(s -> rt.getForEntity(URL2, String.class, s.getBody()))
                 .andApply(s -> myService.work(s.getBody()))
                 .andError(e -> dr.setErrorResult(e.getMessage()))
                 .andAccept(s ->  dr.setResult(s));
 
-        // 비동기 작업 완료시
+        // 비동기 작업 완료 성공시
         // 1. f1 callback 수행
         // 2. f1 callback complete 는 연결된 f2 completion 객체 run (f2 addCallback)
         // 3. f2 callback complete 는 연결된 f3 completion 객체 run (f3 accept)
+
+        // 비동기 작업 완료 실패시
+        // 1. 위에서 설정된 객체 체인대로 next 에 error 를 연쇄적으로 던짐
+        // 2. Error Completion 객체를 만나면 설정된 에러 로직을 수행하고 로직 종료
 
         return dr;
     }
