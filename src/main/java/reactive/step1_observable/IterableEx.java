@@ -1,7 +1,10 @@
 package reactive.step1_observable;
 
+import lombok.extern.slf4j.Slf4j;
+
 import java.util.Iterator;
 
+@Slf4j
 public class IterableEx {
     public static void main(String[] args) {
         Iterable<Integer> iter = () -> new Iterator<>() {
@@ -18,11 +21,11 @@ public class IterableEx {
         };
 
         for (Integer i : iter) {    // for-each
-            System.out.println(i);
+            log.info(String.valueOf(i));
         }
 
         for (Iterator<Integer> it = iter.iterator(); it.hasNext();) {
-            System.out.println(it.next());
+            log.info(String.valueOf(it.next()));
         }
     }
 }

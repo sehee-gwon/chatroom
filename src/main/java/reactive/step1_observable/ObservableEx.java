@@ -1,10 +1,13 @@
 package reactive.step1_observable;
 
+import lombok.extern.slf4j.Slf4j;
+
 import java.util.Observable;
 import java.util.Observer;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+@Slf4j
 @SuppressWarnings("deprecation")
 public class ObservableEx {
     // Iterable <---> Observable (duality)
@@ -25,7 +28,7 @@ public class ObservableEx {
     }
 
     public static void main(String[] args) {
-        Observer ob = (o, arg) -> System.out.println(Thread.currentThread().getName() + " " + arg);
+        Observer ob = (o, arg) -> log.info(Thread.currentThread().getName() + " " + arg);
 
         IntObservable io = new IntObservable();
         io.addObserver(ob);
@@ -33,7 +36,7 @@ public class ObservableEx {
         ExecutorService es = Executors.newSingleThreadExecutor();
         es.execute(io);
 
-        System.out.println(Thread.currentThread().getName() +  "  EXIT");
+        log.info(Thread.currentThread().getName() +  "  EXIT");
         es.shutdown();
     }
 }
