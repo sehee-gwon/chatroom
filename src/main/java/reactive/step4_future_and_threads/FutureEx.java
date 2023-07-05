@@ -23,11 +23,6 @@ public class FutureEx {
             return "Hello";
         });
 
-        while (!f.isDone()) { // isDone() 메소드는 Non-Blocking 이다.
-            Thread.sleep(200);
-            log.info("Waiting...");
-        }
-
         // 작업의 결과가 완료될 때까지 기다리는지? => Blocking, Non-Blocking
         log.info(f.get());  // Blocking
         log.info("Exit");
