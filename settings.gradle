@@ -1,1 +1,3 @@
-rootProject.name = 'toy'
+rootProject.name = 'stock-exchange'
+include 'module-backend'
+include 'module-frontend'
