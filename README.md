@@ -16,7 +16,7 @@ Chatroom is a real-time chat application built with modern technologies.
 <p>
     <img src="https://img.shields.io/badge/vue-4FC08D?style=for-the-badge&logo=vuedotjs&logoColor=white" alt="vue">
     <img src="https://img.shields.io/badge/nuxt-00DC82?style=for-the-badge&logo=nuxtdotjs&logoColor=white" alt="nuxt">
-    <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="javascript">    
+    <img src="https://img.shields.io/badge/typescript-3178C6?style=for-the-badge&logo=typescript&logoColor=black" alt="typescript">    
     <img src="https://img.shields.io/badge/tailwind css-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="tailwind css">
     <img src="https://img.shields.io/badge/rsocket-EF0092?style=for-the-badge&logo=rsocket&logoColor=white" alt="rsocket">
 </p>
