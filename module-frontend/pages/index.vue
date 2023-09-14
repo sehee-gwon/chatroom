@@ -1,3 +1,12 @@
+<script setup lang="ts">
+    import { RSocket } from '@/assets/js/rsocket-client';
+
+    mounted: {
+        const rsocket = new RSocket();
+        rsocket.connect();
+    }
+</script>
+
 <template>
     <div class="flex flex-col h-screen p-4 bg-gray-200">
         <div class="flex-1 overflow-y-auto mb-4 bg-white rounded shadow">
