@@ -1,6 +1,9 @@
 import { RSocketConnector } from "rsocket-core";
 import { WebsocketClientTransport } from "rsocket-websocket-client";
+import { Buffer } from 'buffer'
 import WebSocket from "isomorphic-ws";
+
+globalThis.Buffer = Buffer;
 
 // Sample
 // https://github.com/rsocket/rsocket-js/blob/1.0.x-alpha/packages/rsocket-examples/src/ClientRequestChannelExample.ts
@@ -11,10 +14,10 @@ export class RSocket {
         const connector = new RSocketConnector({
             setup: {
                 keepAlive: 100,
-                lifetime: 10000,
+                lifetime: 10000
             },
             transport: new WebsocketClientTransport({
-                url: "ws://localhost:8080",
+                url: "ws://localhost:7000",
                 wsCreator: (url) => new WebSocket(url) as any,
             }),
         });
@@ -28,7 +31,7 @@ export class RSocket {
         return new Promise((resolve, reject) => {
             const requester = this.rsocket.requestChannel(
                 {
-                    data: Buffer.from(contents),
+                    data: Buffer.from(contents)
                 },
                 1,
                 false,

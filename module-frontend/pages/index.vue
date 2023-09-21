@@ -1,23 +1,22 @@
 <script setup lang="ts">
     import { RSocket } from '@/assets/js/rsocket-client';
-
-    mounted: {
-        const rsocket = new RSocket();
-        rsocket.connect();
-    }
+    onMounted(async () => {
+        try {
+            const rsocket = new RSocket();
+            await rsocket.connect();
+        } catch (e) {
+            console.log(e);
+        }
+    });
 </script>
 
 <template>
     <div class="flex flex-col h-screen p-4 bg-gray-200">
         <div class="flex-1 overflow-y-auto mb-4 bg-white rounded shadow">
-            <div class="p-4 border-b">
+<!--            <div class="p-4 border-b">
                 <p class="text-sm text-gray-500">사용자명1</p>
                 <p>안녕하세요! 채팅 테스트 중입니다.</p>
-            </div>
-            <div class="p-4 border-b">
-                <p class="text-sm text-gray-500">사용자명2</p>
-                <p>반갑습니다! 어떻게 도와드릴까요?</p>
-            </div>
+            </div>-->
         </div>
 
         <div class="flex items-center bg-white rounded shadow">
